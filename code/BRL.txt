@@ -1,0 +1,36 @@
+The first thing we can do with the pattern matching operator =~ is to work out what we've matched.
+Consider the multi-line string from Jabberwocky again, and the following expression:
+
+  $jabberwocky =~ /toves(\s)did/is;
+The =~ operator returns true if we've found the pattern in the variable $jabberwocky; it returns false if the pattern isn't there.
+
+But if the pattern is found, it also sets some special variables:
+
+$&
+contains the entire matched string
+$`
+contains everything in the string before the match
+$'
+contains everything in the string after the match
+So if we say:
+  $jabberwocky =~ /toves(\s|$)did/im;
+  print "[$`][$&][$']\n";
+We see:
+
+  [twas brilling, and the slithey][toves
+  did][ gyre and gimbal in the wabe]
+(Note that the newline is part of the matched string.)
+
+
+str.partition(sep)
+Split the string at the first occurrence of sep, and return a 3-tuple containing the part before the separator, the separator itself, and the part after the separator. If the separator is not found, return a 3-tuple containing the string itself, followed by two empty strings.
+
+
+n [31]: import difflib
+
+In [32]: difflib.SequenceMatcher(None, "never", "forever").get_matching_blocks()
+Out[32]: [Match(a=1, b=3, size=4), Match(a=5, b=7, size=0)]
+
+
+In [33]: difflib.SequenceMatcher(None, "address", "oddness").get_matching_blocks()
+Out[33]: [Match(a=1, b=1, size=2), Match(a=4, b=4, size=3), Match(a=7, b=7, size=0)]

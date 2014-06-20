@@ -1,0 +1,187 @@
+\ProvidesPackage{beamerthemeI6dv} % this style was created by David Vilar
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\selectcolormodel{cmyk}
+\mode<presentation>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% custom colors
+%\definecolor{i6blue}{cmyk}{1,0.305,0,0.06}
+\definecolor{i6blue}{RGB}{3,43,102}	% SMU BLUE
+\definecolor{GMUgreen}{RGB}{0,200,30}
+%\definecolor{i6bluedark}{rgb}{0.0156,0.2578,0.5625} 
+\definecolor{i6bluedark}{RGB}{3,43,102}
+% http://www.colorsontheweb.com/colorwizard.asp#wizard, used start set: #0066cc
+
+%\definecolor{i6colorscheme1}{HTML}{FF6518} 		 % Orange: e.g. for block title
+%\definecolor{i6colorscheme1}{RGB}{177,0,0}   	 % SMU RED
+\definecolor{i6colorscheme1}{HTML}{F5002F}   	 % SMU RED
+
+
+% Information block
+%\definecolor{i6colorblockbg}{HTML}{0033cc}	% Blue
+%\definecolor{i6colorblockbg}{RGB}{3,43,102}	% SMU BLUE (official)
+%\definecolor{i6colorblockbg}{HTML}{032b66}	% SMU Blue (official)
+\definecolor{i6colorblockbg}{HTML}{0047FF}  % SMU Blue 
+\definecolor{i6colorblockfg}{HTML}{FCE94F}	% Yellow: Text used in blocks
+
+\definecolor{i6colorscheme2}{HTML}{000000}  % Black: Title in headline
+
+%\definecolor{i6colorscheme3}{HTML}{C3DFFF}  % Light blue (original): For poster background
+%\definecolor{i6colorscheme3}{HTML}{B2BFD1}  % Light blue : For poster background
+\definecolor{i6colorscheme3}{HTML}{CDCFCE}  % SMU Gray : For poster background
+
+\definecolor{i6colorscheme4}{HTML}{000000}  % Black:
+
+%\definecolor{i6colorschemeHeadline}{HTML}{0033cc}  % for headline bg
+%\definecolor{i6colorschemeHeadline}{HTML}{032b66}  % SMU Blue (official)
+%\definecolor{i6colorschemeHeadline}{HTML}{0047FF}  % SMU Blue 
+\definecolor{i6colorschemeHeadline}{HTML}{FFFFFF}  % SMU Blue 
+%\definecolor{i6colorschemeFootline}{HTML}{000000}  % for headline bg
+\definecolor{i6colorschemeFootline}{HTML}{100D09}  % for headline bg
+
+% headline colors and fonts
+\setbeamercolor{headline}{fg=white,bg=i6colorschemeHeadline}
+\setbeamercolor{title in headline}{fg=GMUgreen}
+\setbeamercolor{author in headline}{fg=black}
+\setbeamercolor{institute in headline}{fg=black}
+\setbeamercolor{logo in headline}{fg=black,bg=lightgray}
+\setbeamercolor{separation line}{bg=i6colorscheme1}
+
+% footline colors and fonts
+\setbeamercolor{footline}{fg=GMUgreen,bg=i6colorschemeHeadline}
+\setbeamerfont{footline}{fg=green, size=\normalsize}
+
+% body colors and fonts
+\setbeamercolor*{normal text}{fg=black,bg=white}
+
+% block environment
+\setbeamercolor*{block body}{bg=white,fg=black}
+\setbeamercolor*{block title}{fg=i6colorblockfg,bg=GMUgreen}
+\setbeamerfont{block title}{size=\tiny,series=\bf}
+
+% example environment
+\setbeamercolor*{example title}{fg=white,bg=i6colorscheme1}
+\setbeamerfont{example title}{size=\tiny,series=\bf,bg=i6colorscheme1,fg=white}
+
+
+%\setbeamercolor*{example body}{fg=white,bg=i6colorscheme4}
+%\setbeamercolor*{example title}{fg=white,bg=i6colorscheme1}
+
+
+%  \setbeamercolor{framesubtitle}{fg=ta3orange, bg=ta2gray}
+%  \setbeamercolor{author in head/foot}{fg=tabutter, bg=black}
+%  \setbeamercolor{title in head/foot}{bg=tabutter, fg=black}
+
+
+\setbeamercolor{alerted text}{fg=i6colorscheme1}
+%\setbeamercolor{structure}{fg=i6blue}
+
+%  \setbeamertemplate{itemize/enumerate body begin}{
+%  }
+%  \setbeamertemplate{itemize/enumerate body end}{
+%  }
+
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{
+  \vskip.75ex
+  \begin{beamercolorbox}[leftskip=1cm,colsep*=.75ex]{block title}%
+    \usebeamerfont*{block title}\insertblocktitle
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[colsep*=.75ex,sep=.75ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{  
+  \leavevmode
+
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}[T]
+%      \begin{column}{.02\paperwidth}
+%      \end{column}
+ %       \vskip4ex
+      \begin{column}{.2\paperwidth}
+        \begin{center}
+          %\includegraphics[width=.6\linewidth]{logos/i6-hks44}
+        \includegraphics[scale=2.0]{GMUgreengold}
+        \end{center}
+        \vskip1ex
+      \end{column}
+      \begin{column}{.59\paperwidth}
+        \vskip7ex
+  %      \raggedleft
+  \begin{center}
+        \usebeamercolor{title in headline}{\color{fg}\textbf{\large{\inserttitle}}\\[1ex]}
+        \usebeamercolor{author in headline}{\color{fg}\normalsize{\insertauthor}\\[1ex]}
+        \usebeamercolor{institute in headline}{\color{fg}\normalsize{\insertinstitute}\\[1ex]}     
+  \end{center}
+      \end{column}
+      \begin{column}{.2\paperwidth}
+        \vskip1cm
+        \begin{center}
+        \includegraphics[scale=2.0]{GMUgreengold}
+        \end{center}
+        \vskip1.5cm
+      \end{column}
+      \begin{column}{.03\paperwidth}
+      \end{column}
+    \end{columns}
+    \vspace{1cm}
+  \end{beamercolorbox}
+  
+%%      \begin{beamercolorbox}[sep=0.1cm,wd=.1\paperwidth,center]{logo in headline}
+%%        \vskip2ex
+%%      \end{beamercolorbox}  
+%%      \begin{beamercolorbox}[sep=1cm,wd=.7\paperwidth]{headline}
+%%        \usebeamercolor{title in headline}{\raggedright\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
+%%        \usebeamercolor{author in headline}{\raggedright\color{fg}\large{\insertauthor}\\[1ex]}
+%%        \usebeamercolor{institute in headline}{\raggedright\color{fg}\large{\insertinstitute}\\[1ex]}     
+%%      \end{beamercolorbox}%
+%%      \begin{beamercolorbox}[sep=0.1cm,wd=.18\paperwidth,center]{logo in headline}
+%%        \includegraphics[height=5cm]{logos/rwth-hks44}
+%%        \vskip2ex
+%%      \end{beamercolorbox}  
+%%    \end{beamercolorbox}
+  
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+    \rule{0pt}{5pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+    \rule{0pt}{5pt}
+  \end{beamercolorbox}
+  
+  \begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=1cm]{footline}%
+    George Mason University, Fairfax, VA \hfill WWW: \texttt{http://spacs.gmu.edu}
+    \vskip1ex
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+    \rule{0pt}{5pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<all>
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "poster"
+%%% TeX-PDF-mode: t
+%%% End: 
